@@ -4,9 +4,13 @@ require 'capybara/rspec'
 Capybara.app = Application
 
 feature 'Homepage' do
-  scenario 'Shows the welcome message' do
+  scenario 'User can register' do
     visit '/'
-
-    expect(page).to have_content 'Welcome!'
+    click_on 'Register'
+    fill_in 'Email', with: 'bob@example.com'
+    fill_in 'Password', with: 'password'
+    click_on 'Register'
+    expect(page).to have_content 'Hello, bob@example.com'
   end
+
 end
