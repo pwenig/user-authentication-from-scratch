@@ -30,4 +30,22 @@ feature 'Homepage' do
 
   end
 
+  scenario "User can login with registered email and password" do
+    email_address = 'chris@example.com'
+    password = '123456'
+    welcome_message = "Welcome, #{email_address}"
+    visit '/'
+    click_on 'Register'
+    fill_in 'email', with: email_address
+    fill_in 'password', with: password
+    click_on 'Register'
+    click_on 'Logout'
+    click_on 'Login'
+    fill_in 'email', with: email_address
+    fill_in 'password', with: password
+    click_on 'Login'
+    expect(page).to have_content(welcome_message)
+
+  end
+
 end

@@ -37,4 +37,21 @@ class Application < Sinatra::Application
     redirect '/'
   end
 
+  get '/login' do
+    erb :login
+  end
+
+  post '/login' do
+    user = DB[:users].where(email: params[:email]).first
+    check_pass = BCrypt::Password.new(user[:password])
+    if check_pass == params[:password]
+      session[:id] = user[:id]
+      redirect '/'
+    else
+      redirect '/login'
+    end
+
+
+  end
+
 end
