@@ -30,10 +30,13 @@ do not have a Heroku configuration variable named DATABASE_URL, then you will ne
 
 ## Heroku URL:
 
+#Staging
+[http://paul-w-user-auth-staging.herokuapp.com/](http://paul-w-user-auth-staging.herokuapp.com/)
+
+#Production
 [http://paul-w-user-auth-production.herokuapp.com/](http://paul-w-user-auth-production.herokuapp.com/)
 
 
-[http://paul-w-user-auth-staging.herokuapp.com/](http://paul-w-user-auth-staging.herokuapp.com/)
 
 ## To run migrations on Heroku:
 heroku run 'rake db:migrate' -a paul-w-user-auth-staging
