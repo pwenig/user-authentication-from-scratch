@@ -11,3 +11,13 @@ body {
     float: left;
     margin-right: 2em;
 }
+
+#register {
+    font-family: 'Sniglet', cursive;
+    margin-left: 40%;
+    margin-top: 10%;
+}
+
+td {
+    padding: 2.5%;
+}
