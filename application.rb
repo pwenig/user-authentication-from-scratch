@@ -11,7 +11,7 @@ class Application < Sinatra::Application
 
   get '/' do
     if session[:id]
-      user = DB[:user].where(id: session[:id]).first
+      user = DB[:users].where(id: session[:id]).first
     else
       user = false
     end
@@ -24,7 +24,7 @@ class Application < Sinatra::Application
 
   post '/register' do
     hashed_password = BCrypt::Password.create(params[:password])
-    new_id = DB[:user].insert(
+    new_id = DB[:users].insert(
       email: params[:email],
       password: hashed_password
     )
