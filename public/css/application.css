@@ -1,3 +1,13 @@
 body {
     background-color: orange;
 }
+
+#home_all{
+    font-family: 'Sniglet', cursive;
+    margin: 3em;
+}
+
+.home_links1 {
+    float: left;
+    margin-right: 2em;
+}

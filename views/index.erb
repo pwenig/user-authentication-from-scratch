@@ -1,6 +1,21 @@
-<% if user %>
-  <h1>Hello, <%= user[:email] %></h1>
-<% else %>
-  <h1>You are not logged in.</h1>
-  <a href="/register">Register</a>
-<% end %>
+<div id="home_all">
+  <% if user %>
+    <h1>Welcome, <%= user[:email] %></h1>
+
+    <div class="home_links1">
+      <a href="/logout">Logout</a>
+    </div>
+    <div>
+      <a href="/view">View all users</a>
+    </div>
+  <% else %>
+    <h1>You are not logged in.</h1>
+
+    <div class="home_links">
+      <a href="/login">Login</a>
+    </div>
+    <div class="home_links">
+      <a href="/register">Register</a>
+    </div>
+  <% end %>
+</div>
