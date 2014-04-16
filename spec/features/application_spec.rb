@@ -48,4 +48,12 @@ feature 'Homepage' do
 
   end
 
+  scenario "User cannot login if their email address does not exist" do
+    visit '/'
+    click_on 'Login'
+    fill_in 'email', with: "steve@example.com"
+    fill_in 'password', with: "password"
+    click_on 'Login'
+    expect(page).to have_content "Email/password is invalid"
+  end
 end

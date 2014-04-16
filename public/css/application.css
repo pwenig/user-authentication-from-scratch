@@ -1,6 +1,4 @@
-body {
-    background-color: orange;
-}
+
 
 #home_all{
     font-family: 'Sniglet', cursive;
@@ -20,4 +18,8 @@ body {
 
 td {
     padding: 2.5%;
+}
+
+h3 {
+    color: darkred;
 }
