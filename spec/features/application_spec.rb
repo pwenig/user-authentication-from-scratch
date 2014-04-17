@@ -75,4 +75,19 @@ feature 'Homepage' do
     expect(page).to have_content "Email / password is invalid"
   end
 
+  scenario "A user can be marked as an administrator" do
+    email_address = 'chris@example.com'
+    password = '123456'
+    admin = 'View all users'
+    visit '/'
+    click_on 'Register'
+    fill_in 'email', with: email_address
+    fill_in 'password', with: password
+    click_on 'Register'
+    expect(page).to have_no_content(admin)
+    DB[:users].where(:email => email_address).update(:admin => true)
+    visit '/'
+    expect(page).to have_content(admin)
+
+  end
 end

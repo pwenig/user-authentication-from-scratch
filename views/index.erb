@@ -6,7 +6,9 @@
       <a href="/logout">Logout</a>
     </div>
     <div>
-      <a href="/view">View all users</a>
+      <% if user[:admin] %>
+        <a href="/view">View all users</a>
+      <% end %>
     </div>
   <% else %>
     <h1>You are not logged in.</h1>
