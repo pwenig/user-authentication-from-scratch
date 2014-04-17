@@ -6,8 +6,12 @@
         <h1>Login</h1>
       </td>
     </tr>
-    <form action="/login" method="post">
+    <tr>
+      <td></td>
+      <td class="error"><%= error_message %></td>
+    </tr>
       <tr>
+        <form action="/login" method="post">
         <td><p>Email</p></td>
         <td><input type="email" name="email"></td>
       </tr>
